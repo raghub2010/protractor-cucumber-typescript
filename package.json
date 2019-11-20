@@ -1,0 +1,37 @@
+{
+  "name": "protractor-cucumber-typescript",
+  "version": "1.0.0",
+  "description": "Protractor automation framework using cucumber and typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "protractor protractor.config.js",
+    "pretest": "tsc",
+    "update": "webdriver-manager update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raghub2010/protractor-cucumber-typescript.git"
+  },
+  "author": "Raghu B",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raghub2010/protractor-cucumber-typescript/issues"
+  },
+  "homepage": "https://github.com/raghub2010/protractor-cucumber-typescript#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.5",
+    "@types/cucumber": "^6.0.0",
+    "@types/node": "^12.12.11",
+    "@types/typescript": "^2.0.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "cucumber": "^6.0.5",
+    "protractor": "^5.4.2",
+    "protractor-cucumber-framework": "^6.2.0",
+    "ts-node": "^8.5.2",
+    "typescript": "3.6.4"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.11"
+  }
+}
