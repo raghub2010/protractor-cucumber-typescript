@@ -26,8 +26,11 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "cucumber": "^6.0.5",
+    "cucumber-tsflow": "^3.2.0",
+    "multiple-cucumber-html-reporter": "^1.13.1",
     "protractor": "^5.4.2",
     "protractor-cucumber-framework": "^6.2.0",
+    "protractor-multiple-cucumber-html-reporter-plugin": "^1.8.1",
     "ts-node": "^8.5.2",
     "typescript": "3.6.4"
   },
