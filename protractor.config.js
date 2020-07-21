@@ -1,5 +1,6 @@
 
 const path = require('path');
+var reporter = require('cucumber-html-reporter');
 
 exports.config = {
   allScriptsTimeout: 11000,
@@ -22,8 +23,8 @@ exports.config = {
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
-    require: ['./e2e/**/*steps.ts'], // loads step definitions
-    //format: 'json:.tmp/results.json',               // enable console output
+    require: ['./e2e/**/*steps.ts', './e2e/**/*.ts'], // loads step definitions
+    format: 'json:temp/results.json',               // enable console output
     tags : ["@sanity"]
   },
   onPrepare() {
@@ -32,5 +33,25 @@ exports.config = {
     });
     browser.ignoreSynchronization = true;
     browser.manage().window().maximize();
+  },
+  onComplete() {
+    var options = {
+      theme: 'bootstrap',
+      jsonFile: 'temp/results.json',
+      output: 'temp/cucumber_report.html',
+      reportSuiteAsScenarios: true,
+      scenarioTimestamp: true,
+      launchReport: true,
+      metadata: {
+          "App Version":"0.3.2",
+          "Test Environment": "STAGING",
+          "Browser": "Chrome  54.0.2840.98",
+          "Platform": "Windows 10",
+          "Parallel": "Scenarios",
+          "Executed": "Remote"
+      }
+  };
+  
+  reporter.generate(options);
   }
 };
