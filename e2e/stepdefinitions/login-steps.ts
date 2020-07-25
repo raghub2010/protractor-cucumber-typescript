@@ -21,7 +21,14 @@ export class LoginSteps {
     public async login(username: string, password: string) {
         await this.loginPage.enterUsername(username);
         await this.loginPage.enterPassword(password);
+        await this.loginPage.clickOnLoginButton();
+
+    }
+
+    @then('User will verify {string} is logged in successfully')
+    public async verifyLoggedInUser(expectedUsername: string) {
         await browser.sleep(5000);
+        expect(await this.loginPage.getLogggedInMessageText()).to.contains(expectedUsername);
     }
 }
 
