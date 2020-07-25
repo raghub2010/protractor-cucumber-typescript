@@ -21,6 +21,8 @@ export class LoginSteps {
     public async login(username: string, password: string) {
         await this.loginPage.enterUsername(username);
         await this.loginPage.enterPassword(password);
+        await this.loginPage.clickOnLoginButton();
+
     }
 
     @then('User will verify {string} is logged in successfully')
