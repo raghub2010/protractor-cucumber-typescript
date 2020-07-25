@@ -1,4 +1,5 @@
 import { ElementFinder, element, by } from "protractor";
+import {Log4JsConfig as logger} from '../config/log4js-config';
 
 
 export class LoginPage {
@@ -9,6 +10,7 @@ export class LoginPage {
 
 
     public enterUsername(username: string) {
+       logger.log().debug("Entering user name");
         return this.usernameEle.sendKeys(username);
     }
 
